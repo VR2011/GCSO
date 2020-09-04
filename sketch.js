@@ -12,16 +12,17 @@ function setup(){
 
 function draw(){
     background(0, 0, 0);
+    car.shapeColor = "white";
     wall.shapeColor = rgb(80, 80, 80);
     car.velocityX = speed;
-    if(deformation < 100){
-        car.shapeColor = "green";
-    }else if(deformation >= 100 && deformation <= 180){
-        car.shapeColor = "yellow";
-    }else if(deformation > 180){
-        car.shapeColor = "red";
-    }
     if(isTouching(car, wall)){
+        if(deformation < 100){
+            car.shapeColor = "green";
+        }else if(deformation >= 100 && deformation <= 180){
+            car.shapeColor = "yellow";
+        }else if(deformation > 180){
+            car.shapeColor = "red";
+        }
         car.velocityX=0;
     }
     drawSprites();
